@@ -1,5 +1,7 @@
 namespace SpriteKind {
     export const Location = SpriteKind.create()
+    export const VegLettuceKind = SpriteKind.create()
+    export const VegTomatoKind = SpriteKind.create()
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
@@ -79,26 +81,36 @@ function VegLettuce () {
         . . . . . . . . . . . . . 7 7 7 
         . . . . . . . . . . . . . 7 7 7 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Food)
-    tiles.placeOnTile(VegLettuce1, tiles.getTileLocation(10, 9))
+        `, SpriteKind.VegLettuceKind)
+    tiles.placeOnTile(VegLettuce1, tiles.getTileLocation(10, 10))
     VegLettuce1.scale = 0.75
 }
 function VegLettuceOnMeal () {
     VegLettuceOnMeal1 = sprites.create(img`
-        ..777...77.77.....777...77.77.....777...77.77....................
-        .77777777777777..77777777777777..77777777777777..................
-        77ddd7777777777777ddd7777777777777ddd77777777777.................
-        777777777ddd7777777777777ddd7777777777777ddd7777.................
-        777777777777777777777777777777777777777777777777.................
-        777777777777777777777777777777777777777777777777.................
-        777ddd7777777777777ddd7777777777777ddd7777777777.................
-        77777777777dd77777777777777dd77777777777777dd777.................
-        777777777777777777777777777777777777777777777777.................
-        777777777777777777777777777777777777777777777777.................
-        .7777777..77777..7777777..77777..7777777..77777..................
-        .................................................................
-        `, SpriteKind.Food)
-    tiles.placeOnTile(VegLettuceOnMeal1, tiles.getTileLocation(6, 2))
+        ...777...77.77.....777...77.77.....777...77.77.....777...77.77....
+        ..77777777777777..77777777777777..77777777777777..77777777777777..
+        .77ddd7777777777777ddd7777777777777ddd7777777777777ddd77777777777.
+        .777777777ddd7777777777777ddd7777777777777ddd7777777777777ddd7777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .777ddd7777777777777ddd7777777777777ddd7777777777777ddd7777777777.
+        .77777777777dd77777777777777dd77777777777777dd77777777777777dd777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        ..7777777..77777..7777777..77777..7777777..77777..7777777..77777..
+        ...777...77.77.....777...77.77.....777...77.77.....777...77.77....
+        ..77777777777777..77777777777777..77777777777777..77777777777777..
+        .77ddd7777777777777ddd7777777777777ddd7777777777777ddd77777777777.
+        .777777777ddd7777777777777ddd7777777777777ddd7777777777777ddd7777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .777ddd7777777777777ddd7777777777777ddd7777777777777ddd7777777777.
+        .77777777777dd77777777777777dd77777777777777dd77777777777777dd777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        .7777777777777777777777777777777777777777777777777777777777777777.
+        ..7777777..77777..7777777..77777..7777777..77777..7777777..77777..
+        `, SpriteKind.VegLettuceKind)
+    tiles.placeOnTile(VegLettuceOnMeal1, tiles.getTileLocation(5, 3))
     VegLettuceOnMeal1.scale = 0.75
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile13`, function (sprite, location) {
@@ -145,8 +157,8 @@ function VegTomato () {
         . . 2 e e 2 2 2 2 2 4 4 2 e . . 
         . . . 2 2 e e 4 4 4 2 e e . . . 
         . . . . . 2 2 e e e e . . . . . 
-        `, SpriteKind.Player)
-    tiles.placeOnTile(VegTomato2, tiles.getTileLocation(10, 8))
+        `, SpriteKind.VegTomatoKind)
+    tiles.placeOnTile(VegTomato2, tiles.getTileLocation(10, 9))
     VegTomato2.scale = 0.75
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -379,9 +391,31 @@ function VegTitleReplacement () {
         tiles.placeOnTile(VegRocks, value)
     }
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.VegLettuceKind, function (sprite, otherSprite) {
     VegLettuceOnMeal()
 })
+function VegTomatoOnMeal2 () {
+    VegLettuceOnMeal1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . 2 2 2 2 2 2 2 2 . . . . 
+        . . . 2 2 2 e 2 2 e 2 2 2 2 . . 
+        . . . 2 2 e 2 2 e 2 2 e 2 2 . . 
+        . . 2 2 e e 2 e e 2 e 2 2 2 2 . 
+        . 2 2 2 e . 2 e . 2 e . 2 2 2 . 
+        . 2 2 2 e . 2 e . 2 e . 2 2 2 . 
+        . 2 2 2 e . 2 e . 2 e . 2 2 2 . 
+        . 2 2 2 e . 2 e . 2 e 2 2 2 2 . 
+        . 2 2 2 e e 2 e e 2 2 e 2 4 2 . 
+        . e 2 2 2 e 2 2 e e 2 2 2 4 . . 
+        . . e e 2 e e 2 e 2 2 2 4 2 . . 
+        . . . e 2 2 2 2 2 2 4 4 2 . . . 
+        . . . . 2 e e 4 4 4 2 e . . . . 
+        . . . . . . 2 e e e e . . . . . 
+        `, SpriteKind.VegLettuceKind)
+    tiles.placeOnTile(VegLettuceOnMeal1, tiles.getTileLocation(5, 3))
+    VegLettuceOnMeal1.scale = 0.75
+}
 let VegRocks: Sprite = null
 let VegChangeCamera: Sprite = null
 let VegTomato2: Sprite = null
