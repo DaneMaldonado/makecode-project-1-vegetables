@@ -278,30 +278,30 @@ function VegCarrotOnMeal () {
         .................................................
         .................................................
         .................................................
-        ...44444444444444444.........44444444444444444...
-        .444444444114441114444.....444444444114441114444.
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        .444444444444444444444.....444444444444444444444.
-        ...44444444444444444.........44444444444444444...
+        ...eeeeeeeeeeeeeeeee.........eeeeeeeeeeeeeeeee...
+        .eee444444114441114eee.....eee444444114441114eee.
+        ee4444444444444444444ee...ee4444444444444444444ee
+        e444444444444444444444e...e444444444444444444444e
+        e444444444444444444444e...e444444444444444444444e
+        ee4444444444444444444ee...ee4444444444444444444ee
+        .eee444444444444444eee.....eee444444444444444eee.
+        ...eeeeeeeeeeeeeeeee.........eeeeeeeeeeeeeeeee...
         .................................................
-        ...44444444444444444.........44444444444444444...
-        .444444444114441114444.....444444444114441114444.
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        44444444444444444444444...44444444444444444444444
-        .444444444444444444444.....444444444444444444444.
-        ...44444444444444444.........44444444444444444...
+        ...eeeeeeeeeeeeeeeee.........eeeeeeeeeeeeeeeee...
+        .ee4444444114441114eee.....eee444444114441114eee.
+        ee4444444444444444444ee...ee4444444444444444444ee
+        e444444444444444444444e...e444444444444444444444e
+        e444444444444444444444e...e444444444444444444444e
+        ee4444444444444444444ee...ee4444444444444444444ee
+        .eee444444444444444eee.....eee444444444444444eee.
+        ...eeeeeeeeeeeeeeeee.........eeeeeeeeeeeeeeeee...
         .................................................
         .................................................
         .................................................
         .................................................
         `, SpriteKind.VegCarrotKind)
-    tiles.placeOnTile(VegCarrotOnMeal1, tiles.getTileLocation(5, 3))
-    VegCarrotOnMeal1.scale = 1.1
+    tiles.placeOnTile(VegCarrotOnMeal1, tiles.getTileLocation(4, 3))
+    VegCarrotOnMeal1.scale = 1.25
 }
 function VegTomatoOnMeal () {
     TomatoOnMeal1 = sprites.create(img`
@@ -518,29 +518,7 @@ function VegCarrot () {
         ................
         `, SpriteKind.VegCarrotKind)
     tiles.placeOnTile(VegCarrot1, tiles.getTileLocation(10, 12))
-    VegCarrot1.scale = 1.25
-}
-function ClearItems () {
-    VegClearItems = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . b d b . . . . . . 
-        . . . . . . . b d b c . . . . . 
-        . . . . b b c 5 5 5 c b b . . . 
-        . . . . b 5 5 5 1 5 5 5 b . . . 
-        . . . c c 5 5 5 1 5 5 5 c c . . 
-        . . b b 5 5 5 1 1 1 5 5 5 b b . 
-        . . d d 5 1 1 1 1 1 1 1 5 d d . 
-        . . b b 5 5 5 1 1 1 5 5 5 b b . 
-        . . . c c 5 5 5 1 5 5 5 c c . . 
-        . . . . b 5 5 5 1 5 5 5 b . . . 
-        . . . . b b c 5 5 5 c b b . . . 
-        . . . . . . c b d b c . . . . . 
-        . . . . . . . b d b . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.VegLettuceKind)
-    tiles.placeOnTile(VegClearItems, tiles.getTileLocation(8, 8))
-    VegClearItems.scale = 0.75
+    VegCarrot1.scale = 0.5
 }
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
@@ -640,6 +618,28 @@ function VegPotatoes () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.VegLettuceKind, function (sprite, otherSprite) {
     VegLettuceOnMeal()
 })
+function ClearItems2 () {
+    VegClearItems = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . b d b . . . . . . 
+        . . . . . . . b d b c . . . . . 
+        . . . . b b c 5 5 5 c b b . . . 
+        . . . . b 5 5 5 1 5 5 5 b . . . 
+        . . . c c 5 5 5 1 5 5 5 c c . . 
+        . . b b 5 5 5 1 1 1 5 5 5 b b . 
+        . . d d 5 1 1 1 1 1 1 1 5 d d . 
+        . . b b 5 5 5 1 1 1 5 5 5 b b . 
+        . . . c c 5 5 5 1 5 5 5 c c . . 
+        . . . . b 5 5 5 1 5 5 5 b . . . 
+        . . . . b b c 5 5 5 c b b . . . 
+        . . . . . . c b d b c . . . . . 
+        . . . . . . . b d b . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.VegLettuceKind)
+    tiles.placeOnTile(VegClearItems, tiles.getTileLocation(8, 8))
+    VegClearItems.scale = 0.75
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
 })
@@ -649,9 +649,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.VegCarrotKind, function (sprite,
 sprites.onOverlap(SpriteKind.Player, SpriteKind.VegTomatoKind, function (sprite, otherSprite) {
     VegTomatoOnMeal()
 })
+let VegClearItems: Sprite = null
 let VegPotatoe: Sprite = null
 let VegRocks: Sprite = null
-let VegClearItems: Sprite = null
 let VegCarrot1: Sprite = null
 let VegChangeCamera: Sprite = null
 let TomatoOnMeal1: Sprite = null
@@ -666,4 +666,3 @@ tiles.setCurrentTilemap(tilemap`level2`)
 VegTitleReplacement()
 SpawnVegHero()
 VegCallVeg()
-ClearItems()
