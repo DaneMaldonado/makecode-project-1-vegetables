@@ -486,7 +486,7 @@ function VegWhiteBread () {
         ............eeeeeeeeeeeeeeeeeeee.............
         `, SpriteKind.VegWhiteBreadKind)
     tiles.placeOnTile(VegWhiteBread1, tiles.getTileLocation(1, 8))
-    sprites.destroy(VegWhiteBread1)
+    VegWhiteBread1.scale = 0.3
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
@@ -873,7 +873,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.VegTomatoKind, function (sprite,
     VegChangeCalories(VegCalories[1])
 })
 function VegWheatBread () {
-    VegWhiteBread1 = sprites.create(img`
+    VegWheatBread1 = sprites.create(img`
         .............................................
         ................eeeeeeeeeeeee................
         ...........eeeeeeeeeeeeeeeeeeeeeee...........
@@ -915,9 +915,10 @@ function VegWheatBread () {
         ...........eeeeeeeeeeeeeeeeeeeeee............
         ............eeeeeeeeeeeeeeeeeeee.............
         `, SpriteKind.VegWheatBreadKind)
-    tiles.placeOnTile(VegWhiteBread1, tiles.getTileLocation(1, 9))
-    sprites.destroy(VegWhiteBread1)
+    tiles.placeOnTile(VegWheatBread1, tiles.getTileLocation(1, 9))
+    VegWheatBread1.scale = 0.3
 }
+let VegWheatBread1: Sprite = null
 let VegOnionOnMeal: Sprite = null
 let VegRocks: Sprite = null
 let VegClearItems: Sprite = null
