@@ -14,7 +14,7 @@ namespace SpriteKind {
     export const VegRyeBread = SpriteKind.create()
 }
 function Nutrition () {
-    TotalCalories = 0
+    VegTotalCalories = 0
     VegList = [
     VegLettuce1,
     VegTomato,
@@ -411,7 +411,7 @@ function VegCarrotOnMeal () {
     sprites.destroy(VegCarrot1)
 }
 function VegTomatoOnMeal () {
-    TomatoOnMeal1 = sprites.create(img`
+    VegTomatoOnMeal1 = sprites.create(img`
         ...........................................................................
         ...................2222...................2222.....................2222....
         .................22222222...............22222222...................2222....
@@ -445,8 +445,8 @@ function VegTomatoOnMeal () {
         ...........................................................................
         ...........................................................................
         `, SpriteKind.VegTomatoKind)
-    tiles.placeOnTile(TomatoOnMeal1, tiles.getTileLocation(5, 3))
-    TomatoOnMeal1.scale = 1.25
+    tiles.placeOnTile(VegTomatoOnMeal1, tiles.getTileLocation(5, 3))
+    VegTomatoOnMeal1.scale = 1.25
     sprites.destroy(VegTomato)
 }
 function VegWhiteBread () {
@@ -648,7 +648,7 @@ function VegReturnItems () {
     info.setScore(0)
 }
 function VegChangeCalories (amtCalories: number) {
-    TotalCalories += amtCalories
+    VegTotalCalories += amtCalories
     game.showLongText("Calories Added: " + amtCalories, DialogLayout.Bottom)
     info.changeScoreBy(amtCalories)
 }
@@ -1049,7 +1049,7 @@ let VegRocks: Sprite = null
 let VegClearItems: Sprite = null
 let VegRyeBread2: Sprite = null
 let VegChangeCamera: Sprite = null
-let TomatoOnMeal1: Sprite = null
+let VegTomatoOnMeal1: Sprite = null
 let VegCarrotOnMeal1: Sprite = null
 let VegWheatBreadOnMeal: Sprite = null
 let VegLettuceOnMeal1: Sprite = null
@@ -1065,7 +1065,7 @@ let VegPotatoe: Sprite = null
 let VegTomato: Sprite = null
 let VegLettuce1: Sprite = null
 let VegList: Sprite[] = []
-let TotalCalories = 0
+let VegTotalCalories = 0
 tiles.setCurrentTilemap(tilemap`level2`)
 VegCallVeg()
 Nutrition()
